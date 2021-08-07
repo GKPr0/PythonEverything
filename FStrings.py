@@ -1,5 +1,8 @@
 # Link to article about f-Strings: https://realpython.com/python-f-strings/
 
+from SupportFunctions import timeit
+
+
 """ Simple example of f-Strings """
 name = "Ondra"
 age = 22
@@ -35,20 +38,25 @@ print(f"{me!r}")  # calls __repr_
 
 
 """ Speed comparison with old methods"""
-import timeit
+@timeit(number=100000)
+def old_format(name, age):
+    return "%s is %s" % (name, age)
 
-# old %
-print(timeit.timeit("""name = "Eric"
-age = 74
-'%s is %s.' % (name, age)""", number = 10000))
 
-# newer .format()
-print(timeit.timeit("""name = "Eric"
-age = 74
-'{} is {}.'.format(name, age)""", number = 10000))
+@timeit(number=100000)
+def newer_format(name, age):
+    return "{} is {}".format(name, age)
 
-# new f-String
-print(timeit.timeit("""name = "Eric"
-age = 74
-f'{name} is {age}.'""", number = 10000))
+
+@timeit(number=100000)
+def new_format(name, age):
+    return f"{name} is {age}"
+
+
+name = "Ondra"
+age = 22
+
+old_format(name, age)
+newer_format(name, age)
+new_format(name, age)
 
