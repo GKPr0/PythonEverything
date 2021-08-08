@@ -14,7 +14,7 @@ def timeit(number=1):
     return decorator
 
 
-def HEADER(text: str, symbol: str = '-', width: int = 50):
+def HEADER(text: str, symbol: str = '-', width: int = 100):
     print(f'\n{text.center(width, symbol)}')
 
 def LINK(link: str):

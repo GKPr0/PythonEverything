@@ -1,16 +1,18 @@
-# Link to article about f-Strings: https://realpython.com/python-f-strings/
-
+from SupportFunctions import HEADER, LINK
 from SupportFunctions import timeit
 
 
-""" Simple example of f-Strings """
+LINK("https://realpython.com/python-f-strings/")
+HEADER("Simple example of f-Strings")
+
 name = "Ondra"
 age = 22
 
 print(f"Hello {name}. You are {age}")
 
 
-""" Using expressions in f-Strings """
+# ----------------------------------------------
+HEADER("Using expressions in f-Strings")
 def to_lowercase(_input: str) -> str:
     return _input.lower()
 
@@ -18,7 +20,8 @@ name = "Ondrej Yann"
 print(f"{to_lowercase(name)}")
 
 
-""" Using f-string with __str__ and __repr__ methods """
+# ----------------------------------------------
+HEADER("Using f-string with __str__ and __repr__ methods")
 class Person:
     def __init__(self, name, age):
         self.name = name
@@ -37,7 +40,8 @@ print(f"{me}")  # calls __str__
 print(f"{me!r}")  # calls __repr_
 
 
-""" Speed comparison with old methods"""
+# ----------------------------------------------
+HEADER("Speed comparison with old methods")
 @timeit(number=100000)
 def old_format(name, age):
     return "%s is %s" % (name, age)

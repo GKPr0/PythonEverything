@@ -1,6 +1,10 @@
+from SupportFunctions import HEADER, LINK
 from time import time, sleep
 
-print("Using __call__ method in class")
+
+LINK("https://www.geeksforgeeks.org/class-as-decorator-in-python/")
+LINK("https://levelup.gitconnected.com/mastering-decorators-in-python-3-588cb34fff5e")
+HEADER("Using __call__ method in class")
 
 
 class A:
@@ -15,7 +19,9 @@ x = A()
 print("Now calling the instance:")
 x(3, 4, x=11, y=10)
 
-print("\nMore practical example of using __call__ method")
+
+# ----------------------------------------------
+HEADER("More practical example of using __call__ method")
 
 
 class Fibonacci:
@@ -32,9 +38,10 @@ fib = Fibonacci()
 
 for i in range(15):
     print(fib(i), end=", ")
+print("\n")
 
-
-print("\n\nClass decorator as execution timer")
+# ----------------------------------------------
+HEADER("Class decorator as execution timer")
 
 
 class Timer:
@@ -57,7 +64,9 @@ def some_function(delay):
 
 some_function(1)
 
-print("\nClass decorator as error checker")
+
+# ----------------------------------------------
+HEADER("Class decorator as error checker")
 
 
 class ErrorChecker:
@@ -83,8 +92,8 @@ try:
 except TypeError as e:
     print(e)
 
-
-print("\nClass decorator with argmunets")
+# ----------------------------------------------
+HEADER("Class decorator with argmunets")
 
 
 class Decorator:
@@ -112,7 +121,8 @@ my_function(1, 2, 3)
 print("Immediately after my_function() line")
 
 
-print("\nUsing class decorators to decorate class")
+# ----------------------------------------------
+HEADER("Using class decorators to decorate class")
 
 
 def time_this(func):

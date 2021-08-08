@@ -1,3 +1,7 @@
+from SupportFunctions import HEADER
+
+HEADER("Simple function generator")
+
 def greeting_func_gen(lang):
     def customized_greeting(name):
         if lang == "de":   # German
@@ -21,6 +25,8 @@ say_hi = greeting_func_gen("cz")
 print(say_hi("Ondra"))
 
 
+# ----------------------------------------------
+HEADER("Function generator combined with decorator")
 def args_test(func):
     def test(*args):
         if len(args) == 0:

@@ -1,4 +1,9 @@
-print("Creating custom decorator")
+from SupportFunctions import HEADER, LINK
+from random import random, randint, choice
+
+
+LINK("https://realpython.com/primer-on-python-decorators/")
+HEADER("Creating custom decorator")
 
 
 def our_decorator(func):
@@ -17,8 +22,7 @@ def foo(x):
 foo("Hi")
 
 # ----------------------------------------------
-print("\nDecorating build in functions")
-from random import random, randint, choice
+HEADER("Decorating build in functions")
 
 
 def our_decorator(func):
@@ -39,7 +43,7 @@ randint(3, 8)
 choice([4, 5, 6])
 
 # ----------------------------------------------
-print("\nDecorator as argument test")
+HEADER("Decorator as argument test")
 
 
 def argument_test_natural_number(func):
@@ -73,7 +77,7 @@ except Exception as e:
     print("Chyba zachycena:", e)
 
 # ----------------------------------------------
-print("\nDecorator as function call counter")
+HEADER("Decorator as function call counter")
 
 
 def call_counter(func):
@@ -98,7 +102,7 @@ for i in range(10):
 print("Call count", inc.call_count)
 
 # ----------------------------------------------
-print("\nDecorator with parameter")
+HEADER("Decorator with parameter")
 
 
 def greetings(expression):
@@ -119,7 +123,7 @@ def foo(x):
 foo(42)
 
 # ----------------------------------------------
-print("\n Dealing with attribution deleting when using decorators")
+HEADER("Dealing with attribution deleting when using decorators")
 
 
 def atr_del1(x):
@@ -162,8 +166,9 @@ def atr_del3(x):
 print("\nName:", atr_del3.__name__)
 print("Doc:", atr_del3.__doc__)
 
+
 # ----------------------------------------------
-print("\nUsing build-in tool to handle attr deletion when using decorators")
+HEADER("Using build-in tool to handle attr deletion when using decorators")
 from functools import wraps
 
 

@@ -38,6 +38,7 @@ print(regular_card.rank)
 print(regular_card == RegularCard('Q', 'Hearts'))
 
 
+# ----------------------------------------------
 HEADER("Alternative way of making Data Class")
 
 Position = make_dataclass('Position', ['name', 'lat', 'lon'])
@@ -58,6 +59,7 @@ print(WithoutExplicitTypes("Ondra", "test"))
 print(WithoutExplicitTypes("Test"))
 
 
+# ----------------------------------------------
 HEADER("More flexible Data Classes")
 
 
@@ -112,6 +114,7 @@ print(Deck())
 print(Deck(sorted(make_french_deck())))
 
 
+# ----------------------------------------------
 HEADER("Immutable Data Classes")
 
 
@@ -130,6 +133,7 @@ except Exception as e:
     print(e)
 
 
+# ----------------------------------------------
 HEADER("Inheritance")
 
 
